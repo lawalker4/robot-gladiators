@@ -5,9 +5,15 @@ var playerAttack= 10;
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+var enemyName = 'Roborto', 'Amy Android', 'Robo Trumble';
 var enemyHealth = 50;
 var enemyAttack = 12;
+
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log9enemyNames[3]);
+
 
 // check to see if the value of the playerHealth variable is greater than 0
 // if (playerHealth > 0) {
@@ -56,7 +62,7 @@ var fight = function() {
     window.alert(enemyName + " still has " + enemyHealth + " health left.");}
   // if player choses to fight, then fight
 
-    if (promptFight === "fight" || promptFight === "FIGHT") {
+    if (promptFight === "fight" || promptFight === "FIGHT") 
   // remove enemy's health by subtracting the amount set in the playerAttack variable
   enemyHealth = enemyHealth - playerAttack;
   console.log(
@@ -81,15 +87,43 @@ var fight = function() {
     window.alert(playerName + " has died!");
   } else {
     window.alert(playerName + " still has " + playerHealth + " health left.");
-  }
-  // if player choses to skip
-} else if (promptFight === "skip" || promptFight === "SKIP") {
-  window.alert(playerName + " has chosen to skip the fight!");
-} else {
-  window.alert("You need to choose a valid option. Try again!");
-}  
-  
+
+  if (playerHealth > 0) {
+    window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ) );
+  }  else {
+    window.alert("You have lost your robot in battle! Game Over!");
+    break;
   }
 
+  //pick new enemy to fight based on the inde of the enemyNames array//
+   var pickedEnemyName = enemyNames[i];
+
+   //reset enemyHealth before starting new fight
+   enemyHealth = 50;
+
+   // use debugger to pause script from running and check what's going on at that moment in the code
+    // debugger;
+
+    // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
+    fight(pickedEnemyName);
+  }
+
+//   } else if (promptFight === "skip" || promptFight === "SKIP") {
+//   window.alert(playerName + " has chosen to skip the fight!");
+// } else {
+//   window.alert("You need to choose a valid option. Try again!");
+// }  
+  
 //  var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 fight();
+
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+
+
+
+console.log (enemyNames.length);
+for(var i = 0; i < 3; i++) {
+  console.log("apple");
+}
+
+
